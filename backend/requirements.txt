@@ -1,0 +1,13 @@
+numpy==1.24.0
+scikit-learn==1.2.0
+Flask==2.2.2
+mypy==0.991
+typing-extensions==4.4.0
+requests==2.28.1
+types-requests==2.28.11.7
+responses==0.22.0
+dacite==1.7.0
+pandas~=1.5.2
+pandas-stubs~=1.5.2
+sklearn-stub~=0.0.3
+data-science-types
