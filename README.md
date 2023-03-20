@@ -1,6 +1,9 @@
 # Match predictor
 
-The Match Predictor codebase contains an app with several predictors for football results.
+The Match Predictor codebase contains an app with several predictors for football results.  
+It's reading football match data from 531.org
+While this is a football match predictor it's also a framework for automated testing of models
+with code changes over time.
 
 ## Local development
 
@@ -75,17 +78,19 @@ Do so with the tasks below.
 less
 ## Sample model
 
-To get your feet wet, create a predictive model that chooses the first team alphabetically to win.
+Some models created are for validating the framework with automated testing (e.g. alphabetic/home team) models.  Otherw are intended
+to be actual models to see how they perform (e.g. LR modell, improved LR model, )
 
 Create a measurement test for your alphabet model in the backend/test/predictors directory. 
-1.  Create measure_alphabet_predictor.py in test/predictor.  Measure for 33% accuracy, it's not going to be a great model.  
-1.  Create your (alphabet_predictor.py) alphabet model in the backend/matchpredictor/predictors directory. Make sure that it inherits from Predictor.
-1.  Make sure the tests pass by running make backend/measure.  You should see tests increase from 6 to 7.
-1.  Add your alphabet model to ModelProvider in app.py and test_models_api.py
-1.  Make sure your alphabet model shows up in the report by running make backend/report.
-Develop a new model
+1.  Measure_alphabet_predictor.py in test/predictor.  Measure for 33% accuracy, it's not going to be a great model.  
+1.  Created  (alphabet_predictor.py) alphabet model in the backend/matchpredictor/predictors directory. Make sure that it inherits from Predictor.
+1.  Make sure the tests pass by running make backend/measure.  There are 7 model tests.
+1.  Added  alphabet model to ModelProvider in app.py and test_models_api.py
+1.  Make sure added alphabet model shows up in the report by running make backend/report.
+Automated testing of models:  adaboost, alphabetic (just for testing framework), gaussian NB, home team (baseline), Improved LR (more featurs, Linear regression,
+2. and past results predictor.
 
-## Now develop a more sophisticated model. Bonus points if you can get better than 50% accuracy predicting the 2021 English Premier League season.
+## If you want to develop a more sophisticated model. Bonus points if you can get better than 50% accuracy predicting the 2021 English Premier League season.
 
 Create a test for a new model, trained on past results (see a few of the other models for ideas in the backend/matchpredictor/predictors directory).
 Start to implement your new model.
